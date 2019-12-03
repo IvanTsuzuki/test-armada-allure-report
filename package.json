@@ -1,5 +1,5 @@
 {
-  "name": "test-armada-allure-report",
+  "name": "testarmada-allure-report",
   "version": "1.0.0",
   "description": "This is a allure report for test armada tool",
   "main": "reporter.js",
