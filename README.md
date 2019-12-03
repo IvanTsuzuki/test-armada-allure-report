@@ -1,4 +1,4 @@
-# test-armada-allure-report
+# testarmada-allure-report
 This is allure reporter adapter for test armada tests,which generates xml reports that are consumed by allure during generation.
 
 ## Using Reporter In test armada
