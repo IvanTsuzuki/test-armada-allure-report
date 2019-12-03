@@ -1,6 +1,6 @@
 {
   "name": "testarmada-allure-report",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "This is a allure report for test armada tool",
   "main": "reporter.js",
   "scripts": {
