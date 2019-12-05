@@ -1,5 +1,5 @@
 # testarmada-allure-report
-This is allure reporter adapter for test armada tests,which generates xml reports that are consumed by allure during generation.
+This is allure reporter adapter for testarmada tests, which generates xml reports that are consumed by allure during generation.
 
 ## Using Reporter In test armada
 In global js file add reporter like this
