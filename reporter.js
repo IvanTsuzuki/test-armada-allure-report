@@ -14,7 +14,7 @@ var runtimeAllure = new Runtime(allureReporter);
 var find = require("find");
 
 var self = module.exports = {
-    write: function (results, directoryPath) {
+    write: function (results, done ,directoryPath) {
         allureReporter.setOptions(" -o reports/allure-report" || {});
         for (var currentModule in results.modules) {
             module = results.modules[currentModule];
@@ -141,8 +141,8 @@ var self = module.exports = {
                 allureReporter.endCase("passed", "", currentTest.endTimestamp);
                 allureReporter.endSuite(currentTest.endTimestamp);
             }
-
         }
+        //done();
     },
     parse: function (str) {
         return _.isNaN(str) ? 0 : parseInt(str, 10);
