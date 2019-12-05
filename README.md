@@ -5,7 +5,7 @@ This is allure reporter adapter for test armada tests,which generates xml report
 In global js file add reporter like this
 
 ```javascript
-var allure = require("test-armada-allure-report");
+var allure = require("testarmada-allure-report");
 
 module.exports = {
     reporter: allure.write
