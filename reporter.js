@@ -117,20 +117,18 @@ var self = module.exports = {
             }
 
             if (currentTest.isFailure) {
-                if (typeof directoryPath !== 'undefined') {
-                    find.file(/\.png$/, directoryPath + "/screenshots/" + results.environment + "/" + currentModule, function (files) {
-                        files.forEach(function (file) {
-                            fs.readFile(file, function (err, data) {
-                                allureReporter.addAttachment("screenshots", data, "image/png");
-                                allureReporter.endCase("failed", currentTest.errorMessage, currentTest.endTimestamp);
-                                allureReporter.endSuite(currentTest.endTimestamp);
-                            });
+                
+                var dirname = __dirname;
+                var localRootDir = dirname.replace('node_modules/testarmada-allure-report','');
+                find.file(/\.png$/, localRootDir + "screenshots/"+ currentModule, function (files) {
+                    files.forEach(function (file) {
+                        fs.readFile(file, function (err, data) {
+                            allureReporter.addAttachment("screenshots", data, "image/png");
+                            allureReporter.endCase("failed", currentTest.errorMessage, currentTest.endTimestamp);
+                            allureReporter.endSuite(currentTest.endTimestamp);
                         });
                     });
-                } else {
-                    allureReporter.endCase("failed", currentTest.errorMessage, currentTest.endTimestamp);
-                    allureReporter.endSuite(currentTest.endTimestamp);
-                }
+                });
 
             } else if (currentTest.isSkipped) {
                 allureReporter.endCase("skipped", "No Steps Performed", currentTest.endTimestamp);
